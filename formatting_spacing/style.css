@@ -1,0 +1,49 @@
+div{
+    background-color: blue;
+    height: 300px; 
+    width: 340px;
+    color: white;
+
+
+    
+    border-radius: 20px;
+
+
+    border: solid 20px red ;
+
+
+    outline-style: solid;
+    outline-width: 10px;
+    outline-color: chocolate;
+    /* outline-offset: 10px; */
+    
+
+    
+
+    padding: 15px;
+    margin: 15px;
+
+    
+    
+    display: inline-block;
+    
+    
+
+}
+h1{
+    color: blue;
+    text-align: center;
+    text-decoration: overline;
+    text-transform: uppercase;
+     font-size: 80px;
+     letter-spacing: 10px;
+     word-spacing: 30px ;
+     text-shadow: 8px 8px 3px red;
+}
+
+p{
+    text-indent: 50px;
+    line-height: 30px ;
+    
+   
+}

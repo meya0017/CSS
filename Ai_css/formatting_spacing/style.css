@@ -1,0 +1,47 @@
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f5f5f5;
+  padding: 2rem;
+}
+
+h1 {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.box {
+  background-color: white;
+  padding: 1rem;
+  margin-bottom: 1.5rem;
+  border: 1px solid #ccc;
+}
+
+/* 1. Text Color */
+.text-color {
+  color: blue;
+}
+
+/* 2. Text Alignment */
+.text-align {
+  text-align: left;
+}
+
+/* 3. Text Decoration */
+.text-decoration {
+  text-decoration: underline;
+}
+
+/* 4. Text Transformation */
+.text-transform {
+  text-transform: uppercase;
+}
+
+/* 5. Text Indentation */
+.text-indent {
+  text-indent: 50px;
+}
+
+/* 6. Text Shadowing */
+.text-shadow {
+  text-shadow: 2px 2px 5px red;
+}

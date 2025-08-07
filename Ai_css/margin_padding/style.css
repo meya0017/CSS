@@ -1,0 +1,89 @@
+body {
+  font-family: sans-serif;
+  background-color: #f9f9f9;
+  padding: 2rem;
+}
+
+h1 {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.demo {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 1.5rem;
+}
+
+.box {
+  background-color: #ffffff;
+  border: 2px solid #333;
+  text-align: center;
+  min-height: 100px;
+  box-sizing: border-box;
+}
+
+/* ======== MARGIN DEMOS ======== */
+.margin-shorthand {
+  margin: 20px 40px;
+  background-color: #e0f7fa;
+}
+
+.margin-individual {
+  margin-top: 10px;
+  margin-right: 20px;
+  margin-bottom: 30px;
+  margin-left: 40px;
+  background-color: #fce4ec;
+}
+
+.margin-auto {
+  width: 50%;
+  margin: 0 auto;
+  background-color: #fff3e0;
+}
+
+.margin-percent {
+  margin: 5%;
+  background-color: #ede7f6;
+}
+
+.margin-units {
+  margin: 2em 30px 1rem 5vw;
+  background-color: #e8f5e9;
+}
+
+/* ======== PADDING DEMOS ======== */
+.padding-shorthand {
+  padding: 10px 20px;
+  background-color: #fffde7;
+}
+
+.padding-individual {
+  padding-top: 10px;
+  padding-right: 15px;
+  padding-bottom: 20px;
+  padding-left: 25px;
+  background-color: #f3e5f5;
+}
+
+.padding-percent {
+  padding: 5%;
+  background-color: #e1f5fe;
+}
+
+.padding-units {
+  padding: 2em 10px 1rem 5vw;
+  background-color: #f1f8e9;
+}
+
+.padding-overflow {
+  padding: 20px;
+  background-color: #ede7f6;
+  overflow: auto;
+}
+.padding-overflow::after {
+  content: "This box has more padding and might overflow if text is long enough.";
+  display: block;
+  font-size: 0.9rem;
+}

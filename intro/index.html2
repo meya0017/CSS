@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="style2.css" />
+
+    <style>
+      h1 {
+        color: purple;
+      }
+      p{
+        color: green;
+      }
+    </style>
+  </head>
+  <body>
+    <h1 style="color: orchid;">I live in Kenya</h1>
+    <h1>I live in Kenya</h1>
+    <h1>I live in Kenya</h1>
+    <h1>I live in Kenya</h1>
+    <p>
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Culpa sit unde
+      impedit qui accusamus, perspiciatis sequi provident! Quisquam, incidunt.
+      Quia eligendi accusantium ad, pariatur omnis illum quos aperiam ipsam
+      dolores.
+    </p>
+    <p>
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquid suscipit
+      consequuntur temporibus, nihil optio iste dolor porro maiores repellat.
+      Animi quia explicabo dolor sapiente saepe accusamus, expedita temporibus
+      nesciunt vel.
+    </p>
+  </body>
+</html>

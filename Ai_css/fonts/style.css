@@ -1,0 +1,52 @@
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background-color: #f9f9f9;
+  padding: 2rem;
+}
+
+h1 {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.box {
+  background-color: #fff;
+  padding: 1rem;
+  margin-bottom: 1.5rem;
+  border: 1px solid #ccc;
+}
+
+/* 1. Font Family */
+.font-family {
+  font-family: Arial, sans-serif;
+}
+
+/* 2. Font Style */
+.font-style {
+  font-style: italic;
+}
+
+/* 3. Font Size */
+.font-size {
+  font-size: 24px;
+}
+
+/* 4. Font Variant */
+.font-variant {
+  font-variant: small-caps;
+}
+
+/* 5. Font Weight */
+.font-weight {
+  font-weight: bold;
+}
+
+/* 6. Line Height */
+.line-height {
+  line-height: 2;
+}
+
+/* 7. Font Shorthand */
+.font-shorthand {
+  font: italic bold 18px Georgia, serif;
+}
