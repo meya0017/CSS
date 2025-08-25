@@ -1,0 +1,302 @@
+
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <title>Ch0 Setup</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="demo">I’m a demo box</div>
+</body>
+</html>
+```
+<p>
+**Try this**
+
+* Toggle `* { box-sizing: border-box; }` and watch sizing change.
+* Add nested `.demo` boxes and inspect in DevTools.
+
+---
+
+## Chapter 1 — Cascade, Specificity, Inheritance & Layers
+
+**What you’ll learn:** how CSS decides “who wins”, how to structure styles to avoid fights.
+
+**Key ideas**
+
+<!-- * **Specificity** order (lowest → highest): element < class/attribute/pseudo-class < id < inline styles; `!important` overrides but avoid it.
+* **Source order**: later rules win when specificity ties.
+* **Inheritance**: typographic properties (e.g., `color`, `font`) often inherit; layout properties (e.g., `margin`) don’t.
+* **Cascade Layers** `@layer` let you define priority groups intentionally (e.g., reset < utilities < components < overrides). -->
+
+**Code**
+</p>
+
+
+<button class="btn primary">Click me</button>
+```
+<p>
+**Try this**
+
+* Add `.text-muted` to the button and then set `.btn.primary { color: yellow; }` to see layer precedence.
+
+---
+
+## Chapter 2 — The Box Model (content, padding, border, margin)
+
+**What you’ll learn:** how CSS sizes boxes and how `box-sizing` changes math.
+
+**Key ideas**
+
+* Default sizing (`content-box`): `width` sets content width; padding/border add on.
+* `box-sizing: border-box;` makes `width` include padding/border (easier layouts).
+* Margin collapses occur **vertically** between block elements.
+
+**Code**
+
+```html
+</p>
+
+<div class="box">content-box width math</div>
+<div class="box borderbox">border-box width math</div>
+```
+<p>
+**Try this**
+
+* Toggle `.borderbox` to see how total width changes.
+* Add two `.box` elements back-to-back with different `margin-top/bottom` to observe margin collapse.
+
+> Want a visual diagram? Send `!` and I’ll attach one with a step-by-step build.
+
+---
+
+## Chapter 3 — Display & Formatting Contexts
+
+**What you’ll learn:** how `display` affects flow and the concept of **BFC** (block formatting context).
+
+**Key ideas**
+
+* Common values: `block`, `inline`, `inline-block`, `flow-root` (starts a new BFC), `contents`.
+* **BFC** prevents margin-collapsing and makes a container wrap floated children.
+
+**Code**
+
+```html
+</p>
+
+
+<div class="flow-root">
+  <img class="float" src="https://via.placeholder.com/120" alt=""/>
+  <p>Container uses flow-root, so it encloses floats without clearfix hacks.</p>
+</div>
+```
+<p>
+**Try this**
+
+* Remove `flow-root` and see the container collapse around the float.
+
+---
+
+## Chapter 4 — Positioning & Stacking Contexts
+
+**What you’ll learn:** `position: relative | absolute | fixed | sticky`, `z-index`, and stacking contexts.
+
+**Key ideas**
+
+* Absolutely positioned elements are taken out of normal flow and positioned relative to the **nearest positioned ancestor**.
+* `position: sticky` toggles between relative and fixed within a scroll container.
+* New stacking contexts form via `position` + `z-index`, `opacity < 1`, `transform`, `filter`, etc.
+
+**Code**
+
+```html
+</p>
+
+
+<div class="wrap">
+  <div class="sticky">I stick to the top while scrolling</div>
+  <div class="card">
+    <span class="badge">NEW</span>
+    Card content...
+  </div>
+  <div class="card">Another card...</div>
+  <div class="card">And another...</div>
+</div>
+```
+<p>
+**Try this**
+
+* Add `transform: translateZ(0);` to `.card` and experiment with `z-index` to see new stacking contexts.
+
+---
+
+## Chapter 5 — Flexbox Deep Dive
+
+**What you’ll learn:** 1‑D layout, axis concepts, wrapping, alignment.
+
+**Key ideas**
+
+* Main vs cross axis; `justify-content` controls main‑axis distribution, `align-items` cross‑axis alignment.
+* `flex: 1` means `flex: 1 1 0` (grow, shrink, basis).
+
+**Code**
+
+```html
+</p>
+
+
+<div class="flex">
+  <div>auto</div>
+  <div class="grow">grows</div>
+  <div>auto</div>
+</div>
+```
+<p>
+**Try this**
+
+* Add `flex-wrap: wrap;` and set widths to see wrapping behavior.
+* Practice common patterns: navbar, sidebar/content, equal-height cards.
+
+---
+
+## Chapter 6 — CSS Grid Deep Dive
+
+**What you’ll learn:** 2‑D layout, track sizing, auto‑placement, alignment.
+
+**Key ideas**
+
+* Define rows/columns with `grid-template-columns/rows`.
+* Use `fr` units, `minmax()`, and `auto-fit/auto-fill` for responsive grids.
+
+**Code**
+
+```html
+</p>
+
+
+<div class="grid">
+  <div>1</div><div>2</div><div>3</div><div>4</div><div>5</div>
+</div>
+```
+
+
+<p>
+**Try this**
+
+* Build a magazine layout with named areas using `grid-template-areas`.
+
+---
+
+## Chapter 7 — Responsive Design: Units, Media & Container Queries
+
+**What you’ll learn:** fluid sizing, `clamp()`, media queries, and container queries.
+
+**Key ideas**
+
+* Prefer relative units: `rem`, `em`, `vw/vh`, `dvh`, `%`.
+* Use `clamp(min, preferred, max)` to create fluid type/spacing.
+* **Container queries** respond to a component’s container, not the viewport.
+
+**Code**
+
+```html
+</p>
+
+
+<div class="card-grid">
+  <article class="card">
+    <img src="https://via.placeholder.com/160" alt=""/>
+    <div>
+      <h3>Responsive Card</h3>
+      <p>Layout changes when the container is wide enough.</p>
+    </div>
+  </article>
+</div>
+```
+
+
+<p>
+**Try this**
+
+* Resize just the card’s container (not the whole window) to see the query trigger.
+
+---
+
+## Chapter 8 — Modern Selectors & Pseudo‑classes
+
+**What you’ll learn:** powerful selectors that simplify CSS.
+
+**Key ideas**
+
+* `:is()` groups selectors without adding specificity; `:where()` groups with **zero** specificity.
+* `:has()` selects a parent based on its children (great for stateful UIs).
+* Accessiblity helpers: `:focus-visible`, `:focus-within`.
+
+**Code**
+
+```html
+</p>
+
+
+<div class="filter">
+  <label><input type="checkbox"> Enable option</label>
+</div>
+<nav>
+  <a href="#">Home</a>
+  <button>Action</button>
+</nav>
+```
+
+
+<p>
+**Try this**
+
+* Use `:has(img[alt=""])` to outline images missing alt text while developing.
+
+---
+
+## Chapter 9 — Custom Properties & Functions
+
+**What you’ll learn:** design tokens with CSS variables; `calc()`, `min()`, `max()`, `clamp()`.
+
+**Key ideas**
+
+* Custom properties are dynamic, cascade-aware variables: `--space-2`, `--brand`.
+* Scope variables to components; toggle themes by changing root variables.
+
+**Code**
+
+```html
+</p>
+
+
+
+<button class="btn">Primary</button>
+<div class="dark" style="margin-top:1rem">
+  <button class="btn">Dark theme button</button>
+</div>
+```
+
+
+<p>
+**Try this**
+
+* Add a slider to dynamically change `--brand` in DevTools.
+
+---
+
+## Chapter 10 — Transitions, Transforms & Animations
+
+**What you’ll learn:** micro‑interactions and motion.
+
+**Key ideas**
+
+* Transition properties explicitly: `transition: transform 200ms, opacity 200ms`.
+* Use GPU‑friendly properties: `transform`, `opacity` for smoother animations.
+
+**Code**
+
+```html
+</p>
+

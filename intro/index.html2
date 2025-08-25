@@ -5,20 +5,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
     <link rel="stylesheet" href="style2.css" />
-
-    <style>
-      h1 {
-        color: purple;
-      }
-      p{
-        color: green;
-      }
-    </style>
+      
+    
   </head>
   <body>
-    <h1 style="color: orchid;">I live in Kenya</h1>
-    <h1>I live in Kenya</h1>
-    <h1>I live in Kenya</h1>
+    <h1> 
+    <!-- style="color: orchid;" -->
+      I live in Kenya</h1>
+    <h1 class="firsth2">I live in Kenya</h1>
+    <h1 id="mustbegreen">I live in Kenya</h1>
     <h1>I live in Kenya</h1>
     <p>
       Lorem ipsum dolor sit amet consectetur adipisicing elit. Culpa sit unde

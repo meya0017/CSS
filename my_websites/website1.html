@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Susu | Junior Developer Portfolio</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: "Segoe UI", sans-serif;
+    }
+    body {
+      background: linear-gradient(135deg, #667eea, #764ba2);
+      color: #fff;
+      line-height: 1.6;
+    }
+    header {
+      background: rgba(0,0,0,0.4);
+      padding: 1rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+    header h1 { font-size: 1.5rem; }
+    nav ul {
+      display: flex;
+      list-style: none;
+    }
+    nav li {
+      margin: 0 1rem;
+    }
+    nav a {
+      text-decoration: none;
+      color: #fff;
+      font-weight: bold;
+      transition: color 0.3s;
+    }
+    nav a:hover {
+      color: #ffe082;
+    }
+    section {
+      padding: 4rem 2rem;
+      max-width: 1000px;
+      margin: auto;
+    }
+    .hero {
+      text-align: center;
+      padding: 6rem 2rem;
+    }
+    .hero h2 {
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+    }
+    .profile {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    .profile img {
+      width: 150px;
+      height: 150px;
+      border-radius: 50%;
+      margin-bottom: 1rem;
+      border: 4px solid #fff;
+    }
+    .projects, .blog {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 1.5rem;
+    }
+    .card {
+      background: rgba(255,255,255,0.1);
+      padding: 1rem;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+      transition: transform 0.3s;
+    }
+    .card:hover { transform: translateY(-5px); }
+    form input, form textarea {
+      width: 100%;
+      padding: 0.8rem;
+      margin: 0.5rem 0;
+      border: none;
+      border-radius: 8px;
+    }
+    form button {
+      padding: 0.8rem 2rem;
+      border: none;
+      border-radius: 8px;
+      background: #ff8a65;
+      color: #fff;
+      font-weight: bold;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+    form button:hover { background: #ff7043; }
+    .roadmap {
+      margin-top: 2rem;
+    }
+    .roadmap-item {
+      background: rgba(255,255,255,0.1);
+      margin: 1rem 0;
+      padding: 1rem;
+      border-radius: 8px;
+    }
+    footer {
+      text-align: center;
+      padding: 2rem;
+      background: rgba(0,0,0,0.4);
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Susu.dev</h1>
+    <nav>
+      <ul>
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#blog">Blog</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <section id="home" class="hero">
+    <h2>Hello, I’m Susu 👋</h2>
+    <p>A junior developer passionate about building web applications, learning new technologies, and sharing knowledge.</p>
+  </section>
+
+  <section id="about">
+    <h2>About Me</h2>
+    <div class="profile">
+      <img src="https://via.placeholder.com/150" alt="Profile Photo">
+      <p>Hi! I’m Susu, a junior developer exploring front-end and back-end development. I love creating visually appealing websites and learning best practices for clean, efficient code.</p>
+    </div>
+
+    <div class="roadmap">
+      <h3>My Learning Roadmap</h3>
+      <div class="roadmap-item"><strong>HTML & CSS:</strong> Building structured, styled web pages with responsive design.</div>
+      <div class="roadmap-item"><strong>JavaScript & DOM:</strong> Making web pages interactive, handling events, and fetching data.</div>
+      <div class="roadmap-item"><strong>React:</strong> Learning modern component-based development for dynamic UIs.</div>
+      <div class="roadmap-item"><strong>Backend (Node.js, Express):</strong> Creating APIs, handling databases, and server-side logic.</div>
+      <div class="roadmap-item"><strong>Databases (MongoDB, SQL):</strong> Storing and retrieving data efficiently.</div>
+      <div class="roadmap-item"><strong>Version Control (Git & GitHub):</strong> Collaborating and managing projects.</div>
+    </div>
+  </section>
+
+  <section id="projects">
+    <h2>Projects</h2>
+    <div class="projects">
+      <div class="card"><h3>Portfolio Website</h3><p>A personal portfolio showcasing my work and blog.</p></div>
+      <div class="card"><h3>Todo App</h3><p>A task manager with add/remove/edit features built using JavaScript.</p></div>
+      <div class="card"><h3>Weather App</h3><p>Fetches real-time weather data using an API and displays it beautifully.</p></div>
+    </div>
+  </section>
+
+  <section id="blog">
+    <h2>Blog</h2>
+    <div class="blog">
+      <div class="card"><h3>Getting Started with HTML</h3><p>Basics of HTML and why semantic elements matter.</p></div>
+      <div class="card"><h3>Why Learn JavaScript?</h3><p>Understanding why JavaScript is essential for web developers.</p></div>
+      <div class="card"><h3>My First Project Experience</h3><p>Lessons I learned while building my first real project.</p></div>
+    </div>
+  </section>
+
+  <section id="contact">
+    <h2>Contact Me</h2>
+    <form>
+      <input type="text" placeholder="Your Name" required>
+      <input type="email" placeholder="Your Email" required>
+      <textarea rows="5" placeholder="Your Message" required></textarea>
+      <button type="submit">Send</button>
+    </form>
+    <div style="margin-top:2rem;">
+      <h3>Find Me Here</h3>
+      <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3988.859247941983!2d36.82194631532986!3d-1.2920653990617362!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x182f10cfc26e1f8b%3A0x6df6db61e4d4b0a!2sNairobi%2C%20Kenya!5e0!3m2!1sen!2ske!4v1623249623456!5m2!1sen!2ske" width="100%" height="300" style="border:0; border-radius:10px;" allowfullscreen="" loading="lazy"></iframe>
+    </div>
+  </section>
+
+  <footer>
+    <p>© 2025 Susu. Built with ❤ using HTML, CSS & JS.</p>
+  </footer>
+
+  <script>
+    // Smooth scrolling
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function(e) {
+        e.preventDefault();
+        document.querySelector(this.getAttribute('href')).scrollIntoView({
+          behavior: 'smooth'
+        });
+      });
+    });
+  </script>
+</body>
+</html>

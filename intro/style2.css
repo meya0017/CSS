@@ -1,6 +1,10 @@
-h1 {
-  color: blue !important;
+* {
+  color: brown;
 }
-p {
-  color: red !important;
-}
+
+ .firsth2 {
+        color: red;
+          }
+  #mustbegreen{  
+        color: green;
+              }

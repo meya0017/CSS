@@ -1,0 +1,87 @@
+/* Quick dev helper */
+    * { box-sizing: border-box; }
+    body { font: 16px/1.5 system-ui, sans-serif; padding: 2rem; }
+    .demo { outline: 1px dashed; padding: 1rem; margin-block: .75rem; }
+
+  @layer reset, utilities, components, overrides;
+
+  @layer reset {
+    *, *::before, *::after { box-sizing: border-box; }
+  }
+
+  @layer utilities {
+    .text-muted { color: #666; }
+  }
+
+  @layer components {
+    .btn { padding: .6rem 1rem; border: 1px solid #888; background: #f7f7f7; }
+    .btn.primary { background: #0a84ff; color: white; border-color: #0a84ff; }
+  }
+
+  @layer overrides {
+    /* Runs last: safe place for rare exceptions */
+    .btn[disabled] { opacity: .5; pointer-events: none; }
+  }
+
+   .box { width: 300px; padding: 20px; border: 8px solid #4b9; margin: 16px 0; }
+  .borderbox { box-sizing: border-box; }
+
+.flow-root { display: flow-root; border: 1px dashed; }
+  .float { float: right; width: 120px; margin: .5rem; background: #eef; }
+
+
+  .wrap { height: 180px; overflow: auto; border: 1px solid; }
+  .sticky { position: sticky; top: 0; background: #ffd; padding: .5rem; }
+  .card { position: relative; border: 1px solid #ccc; padding: 1rem; margin: 1rem 0; }
+  .badge { position: absolute; right: .5rem; top: .5rem; background: #0a84ff; color: #fff; padding: .2rem .4rem; }
+
+
+  .flex { display: flex; gap: 12px; border: 1px dashed; padding: 12px; }
+  .flex > div { background: #eee; padding: 12px; }
+  .grow { flex: 1; }
+
+
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 12px; padding: 12px; border: 1px dashed;
+  }
+  .grid > div { background: #eef; padding: 16px; }
+
+
+:root { --step-0: clamp(1rem, 1rem + 1vw, 1.25rem); }
+  h1 { font-size: clamp(1.5rem, 2vw + 1rem, 3rem); }
+
+  /* Container query setup */
+  .card-grid { display: grid; gap: 1rem; container-type: inline-size; }
+  .card { border: 1px solid #ccc; padding: 1rem; }
+  @container (min-width: 500px) {
+    .card { display: grid; grid-template-columns: 160px 1fr; gap: 1rem; }
+  }
+
+
+ /* Card highlights when it has a checked input */
+  .filter { border: 1px solid #ccc; padding: 1rem; margin: .5rem 0; }
+  .filter:has(input:checked) { outline: 3px solid #0a84ff; }
+
+  /* Grouping */
+  nav :is(a, button) { padding: .4rem .6rem; }
+  nav :where(a, button) { color: #333; } /* doesn’t add specificity */
+
+
+  :root {
+    --brand: #0a84ff;
+    --space: clamp(.5rem, 1vw + .25rem, 1rem);
+  }
+  .btn { padding: var(--space) calc(var(--space) * 2); border: 0; background: var(--brand); color: #fff; }
+  .dark { --brand: #7c3aed; }
+
+
+  .tile {
+     display:inline-block; padding: 1rem 1.5rem; border: 1px solid #ccc; transition: transform .2s ease, box-shadow .2s ease;
+     }
+  .tile:hover {
+     transform: translateY(-4px) scale(1.02); box-shadow: 0 8px 24px rgba(0,0,0,.15);
+     }
+
+
